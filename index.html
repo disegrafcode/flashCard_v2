@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://drive.google.com/uc?export=view&id=1-ISA_9q26wS0skTPIwLjydNLYM8NGxFO" rel="stylesheet">
+
+    <!-- card page style -->
+    <link href="assets/common/css/flashCard.css" rel="stylesheet">
+
+    <!-- fontAwersome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://drive.google.com/uc?export=view&id=1-XK8HduVE5VKSqoH2kHEDap82_vM6hki">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://drive.google.com/uc?export=view&id=1sp8MUOi9TMhhfXy-Zievto26HxCtkPIo">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://drive.google.com/uc?export=view&id=16pf1a4upTyEm78z1CwZIDHbUMmPrdH32">
+
+    <title>Flash Card</title>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="d-flex justify-content-between navbar-dark bg-primary py-2 px-4" id="menu">
+        loading...
+    </nav>
+    <!-- navbar -->
+
+    <main>
+        <section class="mt-5" id="card-page">
+            <div class="page">
+
+                <div class="container-buttons mb-4">
+                    <div class="row">
+                        <div class="col-2 m-auto text-center"></div>
+                        <div class="col-8 m-auto text-center">                            
+                            <div class="input-group position-relative">
+                                <div class="position-absolute mt-2 start-0 translate-middle-y ml-2" style="z-index: 25;"><i class="fas fa-search text-muted"></i></div>
+                                <input type="text" class="form-control  pl-4" placeholder="type here.." aria-label="type here.." aria-describedby="inputSearch" list="listText" id="textTyped">
+                                <button class="input-group-text btn btn-secondary" id="inputSearch" onclick="showInCardTextTyped()"><i class="far fa-eye"></i></button>
+                              </div>
+                              
+                            <datalist id="listText"></datalist>
+                        </div>
+                        <div class="col-2 m-auto text-center">
+                            <button type="button" class="btn  btn-warning" id="randomWord">
+                                <i class="fas fa-dice h5 mb-0 text-black"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-container flip-container-small">
+                    <div class="flipper">
+                        <div class="front shadow-lg">
+                            <div class="content">
+                                <!-- <h1>Question:</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis asperiores iure
+                                    sint quis quo, autem velit dolores vel ratione atque eum excepturi soluta aut saepe
+                                    sit quasi ab, reiciendis neque.</p> -->
+                                <div class="content-center-all">
+                                    <h2 id="text-front"></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back shadow-lg">
+                            <div class="content">
+                                <!-- <h1>Answer:</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis asperiores iure
+                                    sint quis quo, autem velit dolores vel ratione atque eum excepturi soluta aut saepe
+                                    sit quasi ab, reiciendis neque.</p> -->
+                                <div class="content-center-all">
+                                    <img src="" alt="image" class="img-back-2" id="imageGen">
+                                    <h5 id="text-back"></h5>
+                                    <audio controls src="" id="audioSource"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-buttons mt-4">
+                    <div class="row">
+                        <div class="col-2 m-auto text-center">
+                            <button type="button" class="btn btn-primary" id="btnPrev">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="col-8 m-auto text-center">
+                            <button type="button" class="btn btn-primary btn-lg btn-block" id="buttonFlip">FLIP</button>
+                        </div>
+                        <div class="col-2 m-auto text-center">
+                            <button type="button" class="btn btn-primary" id="btnNext">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- card.js-->	
+    <script src="https://disegraf.github.io/archivosVarios/flashCard/card.js"></script>	
+    <!-- card.js-->
+
+    <!-- cars spreadsheets.js -->
+    <script src="assets/lib/Google-Sheets-API/Google-Sheets-API-Simple-Card.js"></script>
+    <script>
+        initGoogleSheetApi(
+                tabName = "hoja1",
+                apiKey = "AIzaSyDFl4eCbBb3vVoZ1fVDsrqeOEoxjaXNaMc",
+                idFile = "1KevBWDeo3SesPxtRU-fAZ-Y9oMuL4uXWCz4_g2n6eG4"
+            );
+        
+    </script>
+    <!-- cars spreadsheets.js-->
+    <script src="assets/common/js/main.js"></script>
+	
+	
+</body>
+
+</html>
